@@ -1,0 +1,95 @@
+public class Coche {
+    private String marca;
+    private String modelo;
+    private int anyoFabricacion;
+    private double combustibleActual;
+    private double consumo;
+    private double kilometraje;
+
+    public Coche(String marca, String modelo, int anyoFabricacion, double combustibleActual, double consumo, double kilometraje) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anyoFabricacion = anyoFabricacion;
+        this.combustibleActual = combustibleActual;
+        this.consumo = consumo;
+        this.kilometraje = kilometraje;
+    }
+
+    public Coche() {
+    }
+
+    public Coche(String marca, String modelo, int anyoFabricacion) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anyoFabricacion = anyoFabricacion;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getAnyoFabricacion() {
+        return anyoFabricacion;
+    }
+
+    public void setAnyoFabricacion(int anyoFabricacion) {
+        this.anyoFabricacion = anyoFabricacion;
+    }
+
+    public double getCombustibleActual() {
+        return combustibleActual;
+    }
+
+    public void setCombustibleActual(double combustibleActual) {
+        this.combustibleActual = combustibleActual;
+    }
+
+    public double getConsumo() {
+        return consumo;
+    }
+
+    public void setConsumo(double consumo) {
+        this.consumo = consumo;
+    }
+
+    public double getKilometraje() {
+        return kilometraje;
+    }
+
+    public void setKilometraje(double kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    public void conducir(double km) {
+        this.kilometraje += km;
+        this.combustibleActual -= this.consumo * km;
+    }
+
+    public void repostar(double litros) {
+        this.combustibleActual += litros;
+    }
+
+    public double getAutonomia() {
+        return this.combustibleActual / this.consumo;
+    }
+
+    public static double getAutonomia(double combustibleActual, double consumo) {
+        return combustibleActual / consumo;
+    }
+
+    public String toString() {
+        return this.marca + " " + this.modelo;
+    }
+}
